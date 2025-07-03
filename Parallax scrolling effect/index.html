@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax Scrolling Effect</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="scroll-progress"></div>
+  <header class="header">
+    <div class="header-icon">
+      <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="wave-svg" aria-hidden="true">
+        <path d="M0 24 Q12 8 24 24 T48 24" stroke="#7f7fd5" stroke-width="3" fill="none">
+          <animate attributeName="d" values="M0 24 Q12 8 24 24 T48 24;M0 24 Q12 28 24 24 T48 24;M0 24 Q12 8 24 24 T48 24" dur="3s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+    </div>
+    <h1>Parallax Scrolling Demo</h1>
+    <p>Scroll down to see the effect!</p>
+    <button class="toggle-theme" aria-label="Toggle light/dark mode">
+      <svg class="theme-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="14" r="10" stroke="#7f7fd5" stroke-width="2" fill="#fff"/>
+        <path d="M14 4v2M14 22v2M4 14h2M22 14h2M7.8 7.8l1.4 1.4M18.8 18.8l1.4 1.4M7.8 20.2l1.4-1.4M18.8 9.2l1.4-1.4" stroke="#7f7fd5" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </header>
+
+  <section class="parallax parallax-1" id="section1" tabindex="0">
+    <div class="floating-shape shape-1"></div>
+    <h2 class="fade-in">Section 1</h2>
+    <p class="fade-in">This is the first parallax section.</p>
+    <button class="cta-btn fade-in" aria-label="Learn more about section 1" data-next="#section2">Learn More</button>
+  </section>
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40 Q360 80 720 40 T1440 40 V80 H0 V40Z" fill="currentColor" opacity="0.08"></path></svg>
+  </div>
+
+  <section class="normal-section" id="section1-normal">
+    <h2>Normal Section</h2>
+    <p>This section scrolls normally.</p>
+  </section>
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40 Q360 0 720 40 T1440 40 V80 H0 V40Z" fill="currentColor" opacity="0.08"></path></svg>
+  </div>
+
+  <section class="parallax parallax-2" id="section2" tabindex="0">
+    <div class="floating-shape shape-2"></div>
+    <h2 class="fade-in">Section 2</h2>
+    <p class="fade-in">This is the second parallax section.</p>
+    <button class="cta-btn fade-in" aria-label="Get started with section 2" data-next="#section2-normal">Get Started</button>
+  </section>
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40 Q360 80 720 40 T1440 40 V80 H0 V40Z" fill="currentColor" opacity="0.08"></path></svg>
+  </div>
+
+  <section class="normal-section" id="section2-normal">
+    <h2>Another Normal Section</h2>
+    <p>More content here.</p>
+  </section>
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40 Q360 0 720 40 T1440 40 V80 H0 V40Z" fill="currentColor" opacity="0.08"></path></svg>
+  </div>
+
+  <section class="parallax parallax-3" id="section3" tabindex="0">
+    <div class="floating-shape shape-3"></div>
+    <h2 class="fade-in">Section 3</h2>
+    <p class="fade-in">This is the third parallax section.</p>
+    <button class="cta-btn fade-in" aria-label="Contact us about section 3" data-next="top">Contact Us</button>
+  </section>
+
+  <button class="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer class="footer">
+    <p>Made with ❤️ for 30 Projects in 30 Days</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
