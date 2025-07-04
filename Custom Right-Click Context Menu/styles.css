@@ -1,0 +1,337 @@
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #f6f7fb;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+.header, .footer {
+    background: #fff;
+    color: #222;
+    text-align: center;
+    padding: 2rem 1rem 1.5rem 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 2rem;
+    transition: background 0.3s, color 0.3s;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    border-radius: 0 0 24px 24px;
+}
+.header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+.toggle-theme {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f7fd5;
+    border-radius: 50%;
+    padding: 0.3em 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+}
+.toggle-theme:hover, .toggle-theme:focus {
+    background: #f0f0fa;
+    color: #222;
+}
+.footer {
+    font-size: 1rem;
+    padding: 1.5rem 1rem 2rem 1rem;
+    margin-top: 3rem;
+    border-radius: 24px 24px 0 0;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 60vh;
+}
+.target-area {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(120deg, #f6f7fb 60%, #e3e6f3 100%);
+    width: 400px;
+    height: 200px;
+    border: 2px dashed #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 1.2em;
+    color: #333;
+    user-select: none;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+    outline: none;
+}
+.target-area:focus {
+    box-shadow: 0 0 0 3px #7f7fd5;
+}
+.target-content {
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+.target-title {
+    font-family: 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(90deg, #7f7fd5 0%, #86a8e7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    animation: gradientMove 3s linear infinite alternate;
+}
+.target-desc {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.15rem;
+    color: #555;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.floating-shape {
+    position: absolute;
+    top: 18%;
+    left: 80%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, #7f7fd5 60%, #86a8e7 100%);
+    border-radius: 50%;
+    opacity: 0.18;
+    pointer-events: none;
+    animation: float 7s ease-in-out infinite;
+    z-index: 2;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-18px) scale(1.04); }
+}
+.back-to-top {
+    position: fixed;
+    right: 2vw;
+    bottom: 2vw;
+    background: linear-gradient(90deg, #7f7fd5 0%, #86a8e7 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, background 0.3s;
+    z-index: 200;
+    outline: none;
+}
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.back-to-top:focus {
+    box-shadow: 0 0 0 3px #7f7fd5;
+}
+body.dark .target-title {
+    background: linear-gradient(90deg, #23262b 0%, #7f7fd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+body.dark .target-desc {
+    color: #b0b0b0;
+}
+body.dark .target-area {
+    background: linear-gradient(120deg, #23262b 60%, #23262b 100%);
+}
+body.dark .floating-shape {
+    background: radial-gradient(circle at 30% 30%, #23262b 60%, #7f7fd5 100%);
+}
+.custom-menu {
+    position: absolute;
+    display: none;
+    background: rgba(34, 34, 44, 0.85);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    min-width: 180px;
+    z-index: 1000;
+    padding: 10px 0;
+    backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(127,127,213,0.18);
+    animation: fadeInMenu 0.18s cubic-bezier(.4,0,.2,1);
+    transition: background 0.3s, color 0.3s;
+}
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+.custom-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.custom-menu li {
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+    font-size: 1.08em;
+    border: none;
+    outline: none;
+    position: relative;
+}
+.custom-menu li:hover, .custom-menu li:focus {
+    background: linear-gradient(90deg, #7f7fd5 0%, #86a8e7 100%);
+    color: #fff;
+}
+.custom-menu li .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 160px;
+    background: rgba(34, 34, 44, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    z-index: 1100;
+    padding: 8px 0;
+    animation: fadeInMenu 0.18s cubic-bezier(.4,0,.2,1);
+}
+.custom-menu li:focus-within > .submenu,
+.custom-menu li:hover > .submenu {
+    display: block;
+}
+.menu-icon {
+    margin-right: 0.7em;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background: #fff;
+    color: #222;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 2rem 2.5rem;
+    z-index: 3000;
+    min-width: 260px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.settings-panel[hidden] {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.95);
+}
+.settings-panel label {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    font-size: 1.1em;
+}
+.settings-panel input[type="color"] {
+    border: none;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: none;
+    margin-left: 0.5em;
+}
+.settings-panel input[type="range"] {
+    width: 100px;
+    margin-left: 0.5em;
+}
+.settings-panel button {
+    align-self: flex-end;
+    background: linear-gradient(90deg, #7f7fd5 0%, #86a8e7 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.settings-panel button:hover {
+    background: linear-gradient(90deg, #86a8e7 0%, #7f7fd5 100%);
+}
+body.dark .settings-panel {
+    background: #23262b;
+    color: #eaeaea;
+}
+@media (max-width: 600px) {
+    .target-area {
+        width: 98vw;
+        height: 140px;
+        font-size: 1em;
+    }
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+body.dark {
+    background: #181a1b;
+    color: #eaeaea;
+}
+body.dark .header, body.dark .footer {
+    background: #23262b;
+    color: #eaeaea;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+body.dark .target-area {
+    background: #23262b;
+    color: #eaeaea;
+    border-color: #7f7fd5;
+}
+body.dark .custom-menu {
+    background: rgba(35, 38, 43, 0.97);
+    color: #fff;
+    border: 1px solid rgba(127,127,213,0.28);
+}
+.toggle-theme .theme-icon circle {
+    fill: #fff;
+    transition: fill 0.3s;
+}
+body.dark .toggle-theme .theme-icon circle {
+    fill: #23262b;
+} 
