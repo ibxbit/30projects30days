@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Magnifier on Hover</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Image Magnifier on Hover</h1>
+        <p>Hover over any image or video to see a magnified section next to your cursor. Use the controls to customize your experience!</p>
+    </header>
+    <main>
+        <div class="magnifier-controls" aria-label="Magnifier Controls">
+            <label for="zoomSlider">Zoom: <span id="zoomValue">2x</span></label>
+            <input type="range" id="zoomSlider" min="1" max="5" step="0.1" value="2" aria-label="Zoom Level">
+            <label for="sizeSlider">Size: <span id="sizeValue">180px</span></label>
+            <input type="range" id="sizeSlider" min="80" max="300" step="1" value="180" aria-label="Magnifier Size">
+            <label for="opacitySlider">Opacity: <span id="opacityValue">1.0</span></label>
+            <input type="range" id="opacitySlider" min="0.2" max="1" step="0.01" value="1" aria-label="Magnifier Opacity">
+            <label for="shapeToggle">Shape:</label>
+            <select id="shapeToggle" aria-label="Magnifier Shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+                <option value="star">Star</option>
+                <option value="polygon">Polygon</option>
+            </select>
+            <label for="filterSelect">Filter:</label>
+            <select id="filterSelect" aria-label="Magnifier Filter">
+                <option value="none">None</option>
+                <option value="grayscale(1)">Grayscale</option>
+                <option value="sepia(1)">Sepia</option>
+                <option value="invert(1)">Invert</option>
+                <option value="blur(2px)">Blur</option>
+                <option value="brightness(1.5)">Brighten</option>
+                <option value="contrast(2)">High Contrast</option>
+            </select>
+            <button id="lensModeBtn" class="btn">Lens Mode</button>
+            <button id="lockBtn" class="btn">Lock Magnifier</button>
+            <button id="downloadBtn" class="btn">Download Magnified Area</button>
+        </div>
+        <div class="images-grid">
+            <div class="image-magnifier-container">
+                <img class="magnifiable" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Sample 1" tabindex="0" />
+            </div>
+            <div class="image-magnifier-container">
+                <img class="magnifiable" src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Sample 2" tabindex="0" />
+            </div>
+            <div class="image-magnifier-container">
+                <img class="magnifiable" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Bitmap_VS_SVG.svg" alt="SVG Sample" tabindex="0" />
+            </div>
+        </div>
+        <div id="magnifier" class="magnifier" aria-live="polite" aria-label="Magnified area" tabindex="0">
+            <span id="colorTooltip" class="color-tooltip" aria-live="polite"></span>
+        </div>
+        <div id="previewWindow" class="preview-window" aria-label="Magnifier Preview"></div>
+        <div id="historyGallery" class="history-gallery" aria-label="Magnifier History Gallery"></div>
+    </main>
+    <footer class="footer">
+        <p>Made with ❤️ for 30 Projects in 30 Days</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 
