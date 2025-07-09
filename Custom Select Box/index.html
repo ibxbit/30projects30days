@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Select Box (Dropdown)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Custom Select Box Demo</h1>
+    <div class="custom-select-container">
+      <label for="custom-select" class="select-label">Choose a fruit:</label>
+      <div class="custom-select" tabindex="0" id="custom-select" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="custom-select-label">
+        <div class="selected-tags"></div>
+        <span class="selected-option">Select a fruit</span>
+        <span class="select-arrow" aria-hidden="true">&#9662;</span>
+        <ul class="select-options" role="listbox" tabindex="-1">
+          <li class="select-search"><input type="text" class="select-search-input" placeholder="Search..." aria-label="Search options"></li>
+          <li class="select-option" role="option" data-value="apple" data-icon="🍎"><span class="option-icon">🍎</span>Apple</li>
+          <li class="select-option" role="option" data-value="banana" data-icon="🍌"><span class="option-icon">🍌</span>Banana</li>
+          <li class="select-option" role="option" data-value="orange" data-icon="🍊"><span class="option-icon">🍊</span>Orange</li>
+          <li class="select-option" role="option" data-value="mango" data-icon="🥭"><span class="option-icon">🥭</span>Mango</li>
+          <li class="select-option" role="option" data-value="grape" data-icon="🍇"><span class="option-icon">🍇</span>Grape</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html> 
