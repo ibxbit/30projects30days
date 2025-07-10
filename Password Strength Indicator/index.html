@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Indicator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Password Strength Indicator</h1>
+    <div class="password-container">
+      <label for="password-input" class="password-label">Enter your password:</label>
+      <div class="password-input-wrapper">
+        <input type="password" id="password-input" class="password-input" autocomplete="new-password" placeholder="Enter password" />
+        <button type="button" class="toggle-password" aria-label="Show password">👁️</button>
+        <span class="info-icon" tabindex="0" aria-label="Password tips">&#9432;
+          <span class="tooltip">Use a mix of uppercase, lowercase, numbers, and symbols. Avoid common words or patterns.</span>
+        </span>
+      </div>
+      <div class="password-helper">Use at least 8 characters, including uppercase, number, and symbol.</div>
+      <ul class="password-requirements">
+        <li id="req-length" class="req-item">• At least 8 characters</li>
+        <li id="req-uppercase" class="req-item">• At least one uppercase letter</li>
+        <li id="req-number" class="req-item">• At least one number</li>
+        <li id="req-symbol" class="req-item">• At least one special character</li>
+      </ul>
+      <div class="strength-bar-wrapper">
+        <div class="strength-bar"></div>
+      </div>
+      <div class="strength-label">Strength: <span class="strength-text">-</span></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html> 
