@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Rating Component</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Star Rating Component</h1>
+    <div class="rating-container">
+      <label class="rating-label" for="star-rating">Your Rating:</label>
+      <div class="star-rating" id="star-rating" tabindex="0" aria-label="Star rating" role="radiogroup">
+        <span class="star" data-value="0.5" data-half="true" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="1" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="1.5" data-half="true" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="2" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="2.5" data-half="true" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="3" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="3.5" data-half="true" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="4" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="4.5" data-half="true" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+        <span class="star" data-value="5" role="radio" aria-checked="false" tabindex="-1">&#9733;</span>
+      </div>
+      <div class="rating-value">Selected: <span class="rating-number">0</span>/5 <button class="clear-rating" aria-label="Clear rating" type="button">&times;</button></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html> 

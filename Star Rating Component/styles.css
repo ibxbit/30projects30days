@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f7fb;
+  color: #222;
+  min-height: 100vh;
+}
+main {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  text-align: center;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #7f7fd5;
+}
+.rating-container {
+  margin-top: 2rem;
+  text-align: left;
+}
+.rating-label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-weight: 600;
+  color: #444;
+}
+.star-rating {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+  align-items: center;
+  user-select: none;
+  outline: none;
+  margin-bottom: 1rem;
+  position: relative;
+  /* Remove background, border-radius, box-shadow, and extra padding */
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.star {
+  color: #ececec;
+  cursor: pointer;
+  transition: color 0.18s, transform 0.18s;
+  outline: none;
+  border-radius: 6px;
+  padding: 0.1em 0.2em;
+}
+.star.selected,
+.star.filled {
+  color: #f7b731;
+}
+.star:hover,
+.star:focus {
+  color: #ffda47;
+  transform: scale(1.15);
+  background: #f7f7fa;
+}
+.star-rating:focus .star.selected {
+  box-shadow: 0 0 0 2px #7f7fd5;
+}
+.rating-value {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+.rating-number {
+  font-weight: 700;
+  color: #f7b731;
+  transition: color 0.2s;
+}
+.star[data-half="true"] {
+  position: relative;
+  overflow: hidden;
+}
+.star[data-half="true"]::before {
+  content: '\2605';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  color: #f7b73133; /* Make half-star much more subtle */
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+.star.filled[data-half="true"]::before,
+.star.selected[data-half="true"]::before,
+.star:hover[data-half="true"]::before {
+  color: #f7b731;
+}
+.star.filled[data-half="true"] {
+  color: #ececec;
+}
+.clear-rating {
+  background: none;
+  border: none;
+  color: #bbb;
+  font-size: 1.5rem;
+  margin-left: 0.7rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.1em 0.4em;
+  transition: background 0.2s, color 0.2s;
+  vertical-align: middle;
+  align-self: center;
+}
+.clear-rating:hover, .clear-rating:focus {
+  background: #f0f0fa;
+  color: #e74c3c;
+}
+@media (max-width: 600px) {
+  main {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+  .star-rating {
+    font-size: 2rem;
+  }
+} 
