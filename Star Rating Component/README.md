@@ -1,3 +1,5 @@
 # Star Rating Component
 
-A modern, accessible, and customizable star rating component built with HTML, CSS, and JavaScript. 
+A modern, accessible, and customizable star rating component built with HTML, CSS, and JavaScript.
+
+![Star Rating Screenshot](screenshot.png) 
